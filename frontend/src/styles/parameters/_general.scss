@@ -1,0 +1,18 @@
+body,
+.root,
+.appContainer {
+  width: 1500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: auto;
+  color: $colorOne;
+  background-color: $colorBack;
+  font-family: $fontstyle_std;
+  font-size: $mfont;
+}
+
+.appContainer {
+  min-height: 650px;
+}
