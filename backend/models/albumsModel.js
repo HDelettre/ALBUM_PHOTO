@@ -20,6 +20,9 @@ const ALBUMS = sequelize.define("ALBUMS", {
   albumName: {
     type: DataTypes.STRING
   },
+  coverPicture: {
+    type: DataTypes.STRING
+  },
 });
 ALBUMS.hasMany(PICTURES, {foreignKey: "albumId", onDelete: "CASCADE"});
 module.exports = ALBUMS;

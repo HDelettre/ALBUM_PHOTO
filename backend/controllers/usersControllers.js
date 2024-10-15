@@ -61,10 +61,7 @@ exports.getAllUsers = (req, res) => {
     try {
       const reponse = await USERS.findAll();
       // SUPPRESSION DES MDP DANS LA REPONSE
-      reponse.forEach(element => {element.password = ""
-        
-      });
-      console.log("REPONSE : ", reponse)
+      reponse.forEach(element => {element.password = ""});
       return res.status(200).json(reponse);
     } catch (error) {
       return res.status(404).json({message : "Erreur de connection au serveur !"});
@@ -90,7 +87,7 @@ exports.getOneUser = (req, res) => {
 exports.updateUser = async (req, res) => {
   if (req.body.password) {
     const passwordHashed = await bcrypt.hash(req.body.password, 10);
-    req.body.password = await passwordHashed;
+    req.body.password = passwordHashed;
   }
   (async () => {
     try {

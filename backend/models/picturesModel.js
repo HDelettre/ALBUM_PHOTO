@@ -14,11 +14,14 @@ const PICTURES = sequelize.define("PICTURES", {
     type: DataTypes.INTEGER(4).ZEROFILL,
     allowNull: false,
   },
+  fileName: {
+    type: DataTypes.STRING,
+  },
   location: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
   },
   description: {
-    type: DataTypes.TEXT
+    type: DataTypes.TEXT,
   },
 });
 
