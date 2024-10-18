@@ -19,9 +19,9 @@ const storage = multer.diskStorage({
     const fileExtension = MIME_TYPES[file.mimetype];
     let fileName = "";
     if (file.fieldname === "avatarUser") {
-      fileName = req.body.userId + "." + fileExtension;
+      fileName = req.body.lastName + "_" + Date.now() + "." + fileExtension;
     } else {
-      fileName = req.body.pictureId + "." + fileExtension;
+      fileName = req.body.albumId + "_" + Date.now() + "." + fileExtension;
     };
     callback(null, fileName);
   },

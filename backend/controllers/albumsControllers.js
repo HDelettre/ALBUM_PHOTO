@@ -21,10 +21,10 @@ exports.createAlbum = (req, res) => {
 };
 
 exports.getAllAlbums = (req, res) => {
-  async () => {
+  (async () => {
     try {
       const reponse = await ALBUMS.findAll();
-      if (!reponse) {
+      if (reponse.length === 0) {
         return res
           .status(404)
           .json({ message: "Aucun album n'a pas été trouvé !" });
@@ -34,9 +34,9 @@ exports.getAllAlbums = (req, res) => {
     } catch (error) {
       return res
         .status(500)
-        .json({ message: "Erreur, le serveur nerépond pas !" });
+        .json({ message: "Erreur, le serveur ne répond pas !" });
     }
-  };
+  })();
 };
 
 exports.getOneAlbum = (req, res) => {

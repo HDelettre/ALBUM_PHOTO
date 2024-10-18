@@ -1,0 +1,22 @@
+.navigationBar {
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  top:90px;
+  left: 0px;
+  border-right: 1px solid $colorFour;
+  border-bottom: 1px solid $colorFour;
+  border-bottom-right-radius: 25px ;
+  background-color: $colorThree;
+}
+
+.closed {
+  height: 100px;
+}
+
+.open {
+  height: 300px;
+}

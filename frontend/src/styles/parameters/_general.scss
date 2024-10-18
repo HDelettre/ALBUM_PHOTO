@@ -13,6 +13,29 @@ body,
   font-size: $mfont;
 }
 
-.appContainer {
-  min-height: 650px;
+.displayContainer {
+  width: 100%;
+  margin-left: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-left: 1px solid red;
+}
+
+.centralContainer {
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  background-color: $colorOne;
+  color: $colorBack;
+  font-size: $h1font;
+  padding: $mmargin;
 }

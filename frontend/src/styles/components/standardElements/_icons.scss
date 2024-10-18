@@ -1,0 +1,38 @@
+.bigIcon {
+  font-size: $bigIcon;
+  cursor: pointer;
+  margin: $mmargin 0;
+  
+  &_red {
+    font-size: $bigIcon;
+    cursor: pointer;
+    margin: $mmargin 0;
+    color:red;
+  }
+}
+
+.icon {
+  margin: 0 $mmargin ;
+}
+
+.info {
+  cursor: help;
+}
+
+.button {
+  cursor: pointer;
+  margin: $mmargin 0;
+  text-align:center ;
+  background-color: $colorOne;
+  color: $colorBack;
+  padding: $mmargin;
+  margin: $lmargin;
+  border-radius: 5px;
+}
+
+.fileButton {
+  max-width: $bigIcon;
+  max-height: $bigIcon;
+  margin: $mmargin;
+  cursor: pointer;
+}
