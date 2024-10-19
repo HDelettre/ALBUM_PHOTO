@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 
 const NavigationBar = ({setMenu}) => {
-
   const [iconeClass, setIconClass] = useState("close");
-
   const openHandle = (e) => {
     setIconClass(e.target.id)
   }
-
   const menuHandle =(e) => {
     setMenu(e.target.id)
   }
-
   return (
     <div className={`navigationBar ${iconeClass}`}>
       <h2>MENU</h2>
@@ -30,5 +26,4 @@ const NavigationBar = ({setMenu}) => {
     </div>
   );
 }
-
 export default NavigationBar;

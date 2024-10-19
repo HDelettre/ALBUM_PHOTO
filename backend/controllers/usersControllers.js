@@ -22,8 +22,11 @@ exports.createNewUser = (req, res) => {
     // CHANGE PHOTO PROFILE
     // CREATE NEW USER
     const newUser = USERS.build(req.body);
-    const pictureFile = JSON.parse(JSON.stringify(req.files.avatarUser))[0];
-    newUser["avatar"] = pictureFile.filename;
+    if (req.body.avatar) {
+      const pictureFile = JSON.parse(JSON.stringify(req.files.avatarUser))[0];
+      newUser["avatar"] = pictureFile.filename;
+    }
+
     try {
       await newUser.save();
       return res

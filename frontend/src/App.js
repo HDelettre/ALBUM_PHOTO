@@ -1,12 +1,17 @@
 // IMPORT COMPONENTS
 import { useState, useEffect } from "react";
+
+// IMPORT COMPONENTS
 import NavigationBar from "./components/navigation/NavigationBar";
-import { getAllAlbums } from "./utils/fetchAlbum";
 import HomeContainer from "./components/home/HomeContainer";
 import LoginContainer from "./components/home/LoginContainer";
 import SignUpContainer from "./components/home/SignUpContainer";
 import AddAlbumContainer from "./components/home/AddAlbumContainer";
 import InfoBar from "./components/headerAndFooter/InfoBar";
+import EditProfileContainer from "./components/home/EditProfileContainer"
+
+// IMPORT FUNCTIONS
+import { getAllAlbums } from "./utils/fetchAlbum";
 
 function App() {
   const [allAlbumsLoading, setAllAlbumsLoading] = useState(false);
@@ -37,12 +42,13 @@ function App() {
       <div className="displayContainer">
         {allAlbumsLoading === true ? (
           <>
-            <InfoBar message={message} userData={userData} />
+            <InfoBar message={message} userData={userData} setMenu={setMenu} />
             <div className="centralContainer">
               {menu === "home" ? <HomeContainer allAlbums={allAlbums} /> : ""}
-              {menu === "login" ? <LoginContainer setMessage={setMessage} /> : ""}
-              {menu === "signup" ? <SignUpContainer setMessage={setMessage} /> : ""}
+              {menu === "login" ? <LoginContainer setMessage={setMessage} setUserData={setUserData} /> : ""}
+              {menu === "signup" ? <SignUpContainer setMessage={setMessage} setMenu={setMenu} /> : ""}
               {menu === "createAlbum" ? <AddAlbumContainer /> : ""}
+              {menu === "editProfile" ? <EditProfileContainer /> : ""}
             </div>
           </>
         ) : (

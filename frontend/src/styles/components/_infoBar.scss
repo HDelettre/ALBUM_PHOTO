@@ -15,5 +15,16 @@
 
   &_user {
     width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
   }
+}
+
+.userAvatar img {
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
